@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+$purple: #7e00c8;
+$cyan: #62cdf6;
+$magenta: #c20ca7;
+
+$primary: $purple;
+$info: $magenta;
+$link: $cyan;
+
+@import '../node_modules/bulma/bulma.sass';
+@import '../node_modules/bulma-timeline/dist/css/bulma-timeline.sass';
