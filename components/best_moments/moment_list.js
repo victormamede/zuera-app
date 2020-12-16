@@ -3,7 +3,7 @@ import Moment from './moment'
 
 export default function MomentList({ moments }) {
   return (
-    <sector className='timeline'>
+    <div className='timeline'>
       <header className='timeline-header'>
         <span className='tag is-medium is-primary'>Hoje</span>
       </header>
@@ -18,6 +18,6 @@ export default function MomentList({ moments }) {
           </div>
         </div>
       ))}
-    </sector>
+    </div>
   )
 }

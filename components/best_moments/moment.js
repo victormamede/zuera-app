@@ -1,12 +1,17 @@
+import Image from 'next/image'
+
 export default function Moment({ data }) {
   return (
     <div className='box'>
       <div className='media'>
         <div className='media-left'>
           <figure className='image is-64x64'>
-            <img
+            <Image
               className='is-rounded'
-              src='https://bulma.io/images/placeholders/128x128.png'
+              src={data.author.avatarImage || '/avatar.png'}
+              width={32}
+              height={32}
+              layout='responsive'
               alt='Image'
             />
           </figure>

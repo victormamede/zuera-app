@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import MomentForm from './moment_form'
+import addMoment from '../../../util/moment/add_moment'
 
 export default function NewMoment({ members }) {
   const [isSubmitting, submitHandler] = useState(false)
@@ -7,19 +8,20 @@ export default function NewMoment({ members }) {
   const onSubmit = async (data) => {
     submitHandler(true)
 
-    const resp = await fetch('/api/moment', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    })
+    data.date = new Date(data.date)
+
+    await addMoment(data)
 
     location.reload()
   }
 
   return (
-    <MomentForm
-      authorOptions={members}
-      isSubmitting={isSubmitting}
-      onSubmit={onSubmit}
-    />
+    <div className='container'>
+      <MomentForm
+        authorOptions={members}
+        isSubmitting={isSubmitting}
+        onSubmit={onSubmit}
+      />
+    </div>
   )
 }

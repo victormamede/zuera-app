@@ -1,9 +1,9 @@
-import firebase from '../config/firebase'
+import firebase from '../../config/firebase'
 
 const db = firebase.firestore()
 
 export default async function getMembers() {
-  const members = await db.collection('members').get()
+  const members = await db.collection('members').orderBy('name').get()
 
   const joined = {}
 

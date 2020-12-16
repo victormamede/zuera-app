@@ -1,16 +1,22 @@
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import Image from 'next/image'
 
 export default function MomentForm({ authorOptions, isSubmitting, onSubmit }) {
-  const { register, handleSubmit, watch, errors } = useForm()
+  const { register, handleSubmit, watch, errors, getValues } = useForm()
+  const [currentAuthor, authorHandler] = useState()
   const today = new Date().toISOString().substr(0, 10)
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='media'>
       <div className='media-left'>
         <figure className='image is-64x64'>
-          <img
+          <Image
             className='is-rounded'
-            src='https://bulma.io/images/placeholders/128x128.png'
+            width={32}
+            height={32}
+            layout='responsive'
+            src={currentAuthor?.avatarImage || '/avatar.png'}
             alt='Image'
           />
         </figure>
@@ -36,7 +42,13 @@ export default function MomentForm({ authorOptions, isSubmitting, onSubmit }) {
                   <div
                     className={'select' + (errors.author ? ' is-danger' : '')}
                   >
-                    <select name='author' ref={register({ required: true })}>
+                    <select
+                      name='author'
+                      ref={register({ required: true })}
+                      onChange={(e) =>
+                        authorHandler(authorOptions[e.target.value])
+                      }
+                    >
                       <option value=''>Selecione o Autor</option>
                       {Object.entries(authorOptions).map(
                         ([id, author], index) => (

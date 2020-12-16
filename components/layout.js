@@ -6,7 +6,7 @@ export default function Layout({ children }) {
     <div>
       <Head>
         <title>Zuera d Tudo</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/icon.svg' />
       </Head>
       <Navbar />
       {children}

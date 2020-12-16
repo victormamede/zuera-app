@@ -7,4 +7,7 @@ module.exports = {
     FIREBASE_MESSAGING_SENDER_ID: '277220693133',
     FIREBASE_APP_ID: '1:277220693133:web:a6a487443f662d7f857ec4',
   },
+  images: {
+    domains: ['firebasestorage.googleapis.com'],
+  },
 }

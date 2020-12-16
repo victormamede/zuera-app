@@ -2,8 +2,8 @@ import Layout from '../components/layout'
 import MomentList from '../components/best_moments/moment_list'
 import NewMoment from '../components/best_moments/new_moment/new_moment'
 
-import getMembers from '../util/get_members'
-import getMoments from '../util/get_moments'
+import getMembers from '../util/member/get_members'
+import getMoments from '../util/moment/get_moments'
 
 export default function BestMoments({ moments, members }) {
   return (

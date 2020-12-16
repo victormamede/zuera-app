@@ -35,6 +35,10 @@ export default function Navbar() {
           <Link href='/best_moments'>
             <a className='navbar-item'>Momentos</a>
           </Link>
+
+          <Link href='/members'>
+            <a className='navbar-item'>Membros</a>
+          </Link>
         </div>
       </div>
     </nav>
