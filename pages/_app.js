@@ -1,7 +1,8 @@
 import '../styles/global.scss'
+import { Settings } from 'luxon'
 
-function MyApp({ Component, pageProps }) {
+Settings.defaultZoneName = 'utc'
+
+export default function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
-
-export default MyApp

@@ -1,10 +1,15 @@
 import Layout from '../components/layout'
-import MomentList, { getMoments } from '../components/best_moments/moment_list'
+import MomentList from '../components/best_moments/moment_list'
+import NewMoment from '../components/best_moments/new_moment/new_moment'
 
-export default function BestMoments({ moments }) {
+import getMembers from '../util/get_members'
+import getMoments from '../util/get_moments'
+
+export default function BestMoments({ moments, members }) {
   return (
     <Layout>
       <div className='container mt-2'>
+        <NewMoment members={members} />
         <MomentList moments={moments} />
       </div>
     </Layout>
@@ -12,11 +17,14 @@ export default function BestMoments({ moments }) {
 }
 
 export async function getStaticProps() {
-  const moments = await getMoments()
+  const members = await getMembers()
+  const moments = await getMoments(members)
 
   return {
     props: {
+      members,
       moments,
     },
+    revalidate: 1,
   }
 }
