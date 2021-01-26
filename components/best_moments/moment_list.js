@@ -5,7 +5,7 @@ export default function MomentList({ moments }) {
   return (
     <div className='timeline'>
       <header className='timeline-header'>
-        <span className='tag is-medium is-primary'>Hoje</span>
+        <span className='tag is-medium is-primary'>Linha do tempo</span>
       </header>
       {moments.map((moment, index) => (
         <div key={index} className='timeline-item'>

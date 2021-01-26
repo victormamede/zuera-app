@@ -18,7 +18,7 @@ export default function Welcome() {
       <div className='column is-7'>
         <div className='container has-text-centered'>
           <h1 className='title'>Zuera d tudo</h1>
-          <h2 className='subtitle'>site real oficial</h2>
+          <h2 className='subtitle'>Um grupo idiota cheio de imbecis</h2>
           <Link href='/best_moments'>
             <button className='button is-light is-rounded'>
               Melhores momentos

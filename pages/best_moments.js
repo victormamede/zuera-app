@@ -8,7 +8,7 @@ import getMoments from '../util/moment/get_moments'
 export default function BestMoments({ moments, members }) {
   return (
     <Layout>
-      <div className='container mt-2'>
+      <div className='container p-2'>
         <NewMoment members={members} />
         <MomentList moments={moments} />
       </div>

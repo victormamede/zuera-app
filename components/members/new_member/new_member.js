@@ -15,7 +15,7 @@ export default function NewMember() {
   }
 
   return (
-    <div className='container'>
+    <div className='container m-2'>
       <MemberForm isSubmitting={isSubmitting} onSubmit={onSubmit} />
     </div>
   )

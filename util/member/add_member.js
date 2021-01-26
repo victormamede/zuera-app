@@ -9,6 +9,7 @@ export default async function addMember(data) {
   const newMember = await collectionRef.add({
     name: data.name,
     nickname: data.nickname,
+    bio: data.bio,
   })
 
   if ('avatar' in data) {

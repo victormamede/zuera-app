@@ -10,6 +10,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "firebase": "^8.2.0",
+    "firebaseui": "^4.7.1",
     "luxon": "^1.25.0",
     "next": "10.0.3",
     "react": "17.0.1",
